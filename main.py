@@ -10,6 +10,10 @@ from tensorflow.keras.models import Model
 import requests
 from io import BytesIO
 from datetime import datetime
+import pytz
+
+# Define PST timezone
+pst = pytz.timezone("America/Los_Angeles")
 
 # ESP32 IP Address
 ESP32_IP = "https://golden-viable-salmon.ngrok-free.app"
@@ -103,7 +107,7 @@ elif selected_tab == "Pest Prediction":
             response = requests.get(pred_url)
             if response.status_code == 200:
                 prediction = response.json().get("prediction", "").strip().lower()
-                timestamp = datetime.now().strftime("%m-%d-%Y %I:%M:%S %p")
+                timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
                 st.write(f"Timestamp: {timestamp}")
             else:
                 st.error("Failed to get prediction data")
