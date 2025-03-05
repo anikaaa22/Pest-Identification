@@ -222,7 +222,7 @@ elif selected_tab == "Pest Prediction":
                     result_label = CLASS_LABEL[max_prob_index] 
                     confidence_score = probabilities[max_prob_index] * 100 # Convert to percentage
                     #result_label = CLASS_LABEL[int(model_predict[0])]
-                    if confidence_score >= 60:
+                    if confidence_score >= 50:
                         st.success(f"### Pest: {result_label}")
                         st.markdown(f"#### Confidence Score: {confidence_score}")
                         st.image(image, use_container_width=True, caption="")
