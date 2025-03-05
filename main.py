@@ -216,13 +216,20 @@ elif selected_tab == "Pest Prediction":
                 # Feature extraction and classification
                 with st.spinner("Processing..."):
                     image_features = featurization(image, ConvNeXtXLarge_featurized_model)
-                    model_predict = classification_model.predict(image_features)
-                    result_label = CLASS_LABEL[int(model_predict[0])]
-                    st.success(f"### Pest: {result_label}")
-                    st.image(image, use_container_width=True, caption="")
-
-                    st.session_state.history.insert(0,(timestamp, result_label, image))
-                    suggestions(result_label)
+                    # Get probability scores 
+                    probabilities = classification_model.predict_proba(image_features)[0] 
+                    max_prob_index = np.argmax(probabilities) 
+                    result_label = CLASS_LABEL[max_prob_index] 
+                    confidence_score = probabilities[max_prob_index] * 100 # Convert to percentage
+                    #result_label = CLASS_LABEL[int(model_predict[0])]
+                    if confidence_score >= 70:
+                        st.success(f"### Pest: {result_label}")
+                        st.success(f"#### Confidence Score: {confidence_score}")
+                        st.image(image, use_container_width=True, caption="")
+                        st.session_state.history.insert(0,(timestamp, result_label, image))
+                        suggestions(result_label)
+                    else:
+                        st.success(f"No wheat pest detected")
             else:
                 st.error("Failed to retrieve image")
 
