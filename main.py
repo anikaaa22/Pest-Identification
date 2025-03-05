@@ -59,31 +59,31 @@ selected_tab = st.sidebar.radio("", ["Pest Prediction", "History", "About"])
 removal_suggestion = ""
 
 def bird_cherry_oat_aphid():
-    removal_suggestion="this is Bird cherry-oat aphid"
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Organophosphates, Flonicamid\nFor biological control: Lacewigs, Hoverflies, Parasitic wasps"
     st.write(removal_suggestion)
 def cerodonta_denticornis():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Spinosad, Abamectin\nFor biological control: Parasitic wasps, Predatory beetles"
     st.write(removal_suggestion)
 def english_grain_aphid():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Sulfoxafor, Flonicamid\nFor biological control: Parasitic wasps"
     st.write(removal_suggestion)
 def green_bug():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Organophosphates, Flonicamid, cultural\nFor biological control: Ladybugs, Lacewigs, Parasitic wasps"
     st.write(removal_suggestion)
 def longlegged_spider_mite():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Abamectin, Bifenazate, Hexythiazox, Spiromesifen\nFor Biological control: Predatory mites, Fungal pathogens"
     st.write(removal_suggestion)
 def penthaleus_major():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Organophosphates, Pyrethroids, Neonicotinoids, Etoxazole\nFor biological control: Predatory mites, Rove beetles"
     st.write(removal_suggestion)
 def wheat_blossom_midge():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Spinosad, Chlorantraniliprole\nFor biological control: Parasitic wasps"
     st.write(removal_suggestion)
 def wheat_phloeothrips():
-    removal_suggestion=""
+    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids,Sulfoxafor, Spinosad\nFor biological control: Predatory mites, Minute pirate mites"
     st.write(removal_suggestion)
 def wheat_sawfly():
-    removal_suggestion=""
+    removal_suggestion="For Chemical control: Pyrethroids, Neonicotinoids, Spinosyns, Carbamates\nFor biological control: Parasitic wasps"
     st.write(removal_suggestion)
 
 # About Tab
