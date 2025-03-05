@@ -128,23 +128,23 @@ elif selected_tab == "Pest Prediction":
                     st.image(image, use_container_width=True, caption="")
 
                     st.session_state.history.append((timestamp, result_label, image))
-                    if result_label=="Bird Cherry-Oat Aphid":
+                    if result_label.lower()=="bird cherry-oat aphid":
                         bird_cherry_oat_aphid()
-                    elif result_label=="Cerodonta Denticornis":
+                    elif result_label.lower()=="cerodonta denticornis":
                         cerodonta_denticornis()
-                    elif result_label=="English Grain Aphid":
+                    elif result_label.lower()=="english grain aphid":
                         english_grain_aphid()
-                    elif result_label=="Green Bug":
+                    elif result_label.lower()=="green bug":
                         green_bug()
-                    elif result_label=="Longlegged Spider Mite":
+                    elif result_label.lower()=="longlegged spider mite":
                         longlegged_spider_mite()
-                    elif result_label=="Penthaleus Major":
+                    elif result_label.lower()=="penthaleus major":
                         penthaleus_major()
-                    elif result_label=="Wheat Blossom Midge":
+                    elif result_label.lower()=="wheat blossom midge":
                         wheat_blossom_midge()
-                    elif result_label=="Wheat Phloeothrips":
+                    elif result_label.lower()=="wheat phloeothrips":
                         wheat_phloeothrips()
-                    elif result_label=="Wheat Sawfly":
+                    elif result_label.lower()=="wheat sawfly":
                         wheat_sawfly()
 
             else:
