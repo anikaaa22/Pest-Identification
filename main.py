@@ -43,7 +43,7 @@ def load_sklearn_models(model_path):
 
 @st.cache_data
 
-def featurization(_image, model):
+def featurization(image, model):
     """Extract deep learning features from the image using ConvNeXtXLarge."""
     img = image.resize(IMG_SIZE)  # Resize image
     img_array = np.array(img) / 255.0  # Normalize pixel values
