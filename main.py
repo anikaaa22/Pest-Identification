@@ -59,32 +59,103 @@ selected_tab = st.sidebar.radio("", ["Pest Prediction", "History", "About"])
 removal_suggestion = ""
 
 def bird_cherry_oat_aphid():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Organophosphates, Flonicamid\nFor biological control: Lacewigs, Hoverflies, Parasitic wasps"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Organophosphates  \n- Flonicamid")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Lacewings  \n- Hoverflies  \n- Parasitic wasps")
+
 def cerodonta_denticornis():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Spinosad, Abamectin\nFor biological control: Parasitic wasps, Predatory beetles"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosad  \n- Abamectin")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Parasitic wasps  \n- Predatory beetles")
+
 def english_grain_aphid():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Sulfoxafor, Flonicamid\nFor biological control: Parasitic wasps"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Sulfoxaflor  \n- Flonicamid")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Parasitic wasps")
+
 def green_bug():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Organophosphates, Flonicamid, cultural\nFor biological control: Ladybugs, Lacewigs, Parasitic wasps"
-    st.success(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Organophosphates  \n- Flonicamid")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Ladybugs  \n- Lacewings  \n- Parasitic wasps")
+
 def longlegged_spider_mite():
-    removal_suggestion="For chemical control: Abamectin, Bifenazate, Hexythiazox, Spiromesifen\nFor Biological control: Predatory mites, Fungal pathogens"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Abamectin  \n- Bifenazate  \n- Hexythiazox  \n- Spiromesifen")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Predatory mites  \n- Fungal pathogens")
+
 def penthaleus_major():
-    removal_suggestion="For chemical control: Organophosphates, Pyrethroids, Neonicotinoids, Etoxazole\nFor biological control: Predatory mites, Rove beetles"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Organophosphates  \n- Pyrethroids  \n- Neonicotinoids  \n- Etoxazole")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Predatory mites  \n- Rove beetles")
+
 def wheat_blossom_midge():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Spinosad, Chlorantraniliprole\nFor biological control: Parasitic wasps"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosad  \n- Chlorantraniliprole")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Parasitic wasps")
+
 def wheat_phloeothrips():
-    removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids,Sulfoxafor, Spinosad\nFor biological control: Predatory mites, Minute pirate mites"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Sulfoxaflor  \n- Spinosad")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Predatory mites  \n- Minute pirate bugs")
+
 def wheat_sawfly():
-    removal_suggestion="For Chemical control: Pyrethroids, Neonicotinoids, Spinosyns, Carbamates\nFor biological control: Parasitic wasps"
-    st.write(removal_suggestion)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown("### **Chemical Control**")
+        st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosyns  \n- Carbamates")
+
+    with col2:
+        st.markdown("### **Biological Control**")
+        st.markdown("- Parasitic wasps")
 
 # About Tab
 if selected_tab == "About":
