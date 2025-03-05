@@ -57,104 +57,106 @@ classification_model = load_sklearn_models("mlp_best_model.pkl")
 selected_tab = st.sidebar.radio("", ["Pest Prediction", "History", "About"])
 
 removal_suggestion = ""
+chem_control_text = "#### **Chemical Control:**"
+bio_control_text = "#### **Biological Control:**"
 
 def bird_cherry_oat_aphid():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Organophosphates  \n- Flonicamid")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Lacewings  \n- Hoverflies  \n- Parasitic wasps")
 
 def cerodonta_denticornis():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosad  \n- Abamectin")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps  \n- Predatory beetles")
 
 def english_grain_aphid():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Sulfoxaflor  \n- Flonicamid")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps")
 
 def green_bug():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Organophosphates  \n- Flonicamid")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Ladybugs  \n- Lacewings  \n- Parasitic wasps")
 
 def longlegged_spider_mite():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Abamectin  \n- Bifenazate  \n- Hexythiazox  \n- Spiromesifen")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Predatory mites  \n- Fungal pathogens")
 
 def penthaleus_major():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Organophosphates  \n- Pyrethroids  \n- Neonicotinoids  \n- Etoxazole")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Predatory mites  \n- Rove beetles")
 
 def wheat_blossom_midge():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosad  \n- Chlorantraniliprole")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps")
 
 def wheat_phloeothrips():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Sulfoxaflor  \n- Spinosad")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Predatory mites  \n- Minute pirate bugs")
 
 def wheat_sawfly():
     col1, col2 = st.columns(2)
 
     with col1:
-        st.markdown("### **Chemical Control**")
+        st.markdown(chem_control_text)
         st.markdown("- Pyrethroids  \n- Neonicotinoids  \n- Spinosyns  \n- Carbamates")
 
     with col2:
-        st.markdown("### **Biological Control**")
+        st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps")
 
 # About Tab
@@ -199,6 +201,7 @@ elif selected_tab == "Pest Prediction":
                     st.image(image, use_container_width=True, caption="")
 
                     st.session_state.history.insert(0,(timestamp, result_label, image))
+                    st.markdown("### **Pest Removal Suggestions:**")
                     if result_label.lower()=="bird cherry-oat aphid":
                         bird_cherry_oat_aphid()
                     elif result_label.lower()=="cerodonta denticornis":
