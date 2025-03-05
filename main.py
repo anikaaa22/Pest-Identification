@@ -69,7 +69,7 @@ def english_grain_aphid():
     st.write(removal_suggestion)
 def green_bug():
     removal_suggestion="For chemical control: Pyrethroids, Neonicotinoids, Organophosphates, Flonicamid, cultural\nFor biological control: Ladybugs, Lacewigs, Parasitic wasps"
-    st.write(removal_suggestion)
+    st.success(removal_suggestion)
 def longlegged_spider_mite():
     removal_suggestion="For chemical control: Abamectin, Bifenazate, Hexythiazox, Spiromesifen\nFor Biological control: Predatory mites, Fungal pathogens"
     st.write(removal_suggestion)
