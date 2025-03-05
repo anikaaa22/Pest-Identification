@@ -57,8 +57,8 @@ classification_model = load_sklearn_models("mlp_best_model.pkl")
 selected_tab = st.sidebar.radio("", ["Pest Prediction", "History", "About"])
 
 removal_suggestion = ""
-chem_control_text = "#### **Chemical Control:**"
-bio_control_text = "#### **Biological Control:**"
+chem_control_text = "#### 🧪 **Chemical Control:**"
+bio_control_text = "#### 🦠 **Biological Control:**"
 
 def bird_cherry_oat_aphid():
     col1, col2 = st.columns(2)
@@ -159,6 +159,27 @@ def wheat_sawfly():
         st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps")
 
+def suggestions(label):
+    st.markdown("### **Pest Removal Suggestions:**")
+    if result_label.lower()=="bird cherry-oat aphid":
+        bird_cherry_oat_aphid()
+    elif result_label.lower()=="cerodonta denticornis":
+        cerodonta_denticornis()
+    elif result_label.lower()=="english grain aphid":
+        english_grain_aphid()
+    elif result_label.lower()=="green bug":
+        green_bug()
+    elif result_label.lower()=="longlegged spider mite":
+        longlegged_spider_mite()
+    elif result_label.lower()=="penthaleus major":
+        penthaleus_major()
+    elif result_label.lower()=="wheat blossom midge":
+        wheat_blossom_midge()
+    elif result_label.lower()=="wheat phloeothrips":
+        wheat_phloeothrips()
+    elif result_label.lower()=="wheat sawfly":
+        wheat_sawfly()
+
 # About Tab
 if selected_tab == "About":
     st.title("About")
@@ -197,30 +218,11 @@ elif selected_tab == "Pest Prediction":
                     image_features = featurization(image, ConvNeXtXLarge_featurized_model)
                     model_predict = classification_model.predict(image_features)
                     result_label = CLASS_LABEL[int(model_predict[0])]
-                    st.success(f"Model Prediction: {result_label}")
+                    st.success(f"### Pest: {result_label}")
                     st.image(image, use_container_width=True, caption="")
 
                     st.session_state.history.insert(0,(timestamp, result_label, image))
-                    st.markdown("### **Pest Removal Suggestions:**")
-                    if result_label.lower()=="bird cherry-oat aphid":
-                        bird_cherry_oat_aphid()
-                    elif result_label.lower()=="cerodonta denticornis":
-                        cerodonta_denticornis()
-                    elif result_label.lower()=="english grain aphid":
-                        english_grain_aphid()
-                    elif result_label.lower()=="green bug":
-                        green_bug()
-                    elif result_label.lower()=="longlegged spider mite":
-                        longlegged_spider_mite()
-                    elif result_label.lower()=="penthaleus major":
-                        penthaleus_major()
-                    elif result_label.lower()=="wheat blossom midge":
-                        wheat_blossom_midge()
-                    elif result_label.lower()=="wheat phloeothrips":
-                        wheat_phloeothrips()
-                    elif result_label.lower()=="wheat sawfly":
-                        wheat_sawfly()
-
+                    suggestions(result_label)
             else:
                 st.error("Failed to retrieve image")
 
@@ -237,5 +239,6 @@ elif selected_tab == "History":
             with st.expander(f"{label} at {timestamp}"):
                 st.write(f"{removal_suggestion}")
                 st.image(image, use_container_width=True)
+                suggestions(label)
     else:
         st.write("No history available.")
