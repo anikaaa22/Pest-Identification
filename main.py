@@ -127,7 +127,7 @@ elif selected_tab == "Pest Prediction":
                     st.success(f"Model Prediction: {result_label}")
                     st.image(image, use_container_width=True, caption="")
 
-                    st.session_state.history.append((timestamp, result_label, image))
+                    st.session_state.history.insert(0,(timestamp, result_label, image))
                     if result_label.lower()=="bird cherry-oat aphid":
                         bird_cherry_oat_aphid()
                     elif result_label.lower()=="cerodonta denticornis":
