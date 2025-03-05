@@ -236,7 +236,7 @@ elif selected_tab == "History":
     if "history" in st.session_state and st.session_state.history:
         for entry in st.session_state.history:
             timestamp, label, image = entry
-            with st.expander(f"{label} at {timestamp}"):
+            with st.expander(f"🪲 <h3 style='font-size:22px;'> {label} at {timestamp} </h3>", expanded=False):
                 st.write(f"{removal_suggestion}")
                 st.image(image, use_container_width=True)
                 suggestions(label)
