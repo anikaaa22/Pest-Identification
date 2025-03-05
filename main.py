@@ -41,6 +41,8 @@ def load_sklearn_models(model_path):
     with open(model_path, "rb") as model_file:
         return pickle.load(model_file)
 
+@st.cache_data
+
 def featurization(image, model):
     """Extract deep learning features from the image using ConvNeXtXLarge."""
     img = image.resize(IMG_SIZE)  # Resize image
