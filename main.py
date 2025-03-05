@@ -159,7 +159,7 @@ def wheat_sawfly():
         st.markdown(bio_control_text)
         st.markdown("- Parasitic wasps")
 
-def suggestions(label):
+def suggestions(result_label):
     st.markdown("### **Pest Removal Suggestions:**")
     if result_label.lower()=="bird cherry-oat aphid":
         bird_cherry_oat_aphid()
@@ -202,7 +202,7 @@ elif selected_tab == "Pest Prediction":
             if response.status_code == 200:
                 prediction = response.json().get("prediction", "").strip().lower()
                 timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
-                st.write(f"Timestamp: {timestamp}")
+                st.markdown(f"### Timestamp: {timestamp}")
             else:
                 st.error("Failed to get prediction data")
                 prediction = ""
