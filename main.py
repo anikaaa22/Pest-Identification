@@ -35,13 +35,11 @@ def get_ConvNeXtXLarge_model():
     x = GlobalAveragePooling2D()(base_model.output)
     return Model(inputs=base_model.input, outputs=x)
 
-@st.cache_resource
+
 def load_sklearn_models(model_path):
     """Load the trained MLP classification model."""
     with open(model_path, "rb") as model_file:
         return pickle.load(model_file)
-
-@st.cache_data
 
 def featurization(image, model):
     """Extract deep learning features from the image using ConvNeXtXLarge."""
