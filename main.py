@@ -28,7 +28,6 @@ CLASS_LABEL = [
 ]
 IMG_SIZE = (224, 224)
 
-@st.cache_resource
 def get_ConvNeXtXLarge_model():
     """Load the ConvNeXtXLarge model with ImageNet weights."""
     base_model = ConvNeXtXLarge(input_shape=(224, 224, 3), include_top=False, weights="imagenet")
