@@ -224,7 +224,7 @@ elif selected_tab == "Pest Prediction":
                     #result_label = CLASS_LABEL[int(model_predict[0])]
                     if confidence_score >= 50:
                         st.success(f"### Pest: {result_label}")
-                        st.markdown(f"#### Confidence Score: {confidence_score}")
+                        #st.markdown(f"#### Confidence Score: {confidence_score}")
                         st.image(image, use_container_width=True, caption="")
                         st.session_state.history.insert(0,(timestamp, result_label, image))
                         suggestions(result_label)
