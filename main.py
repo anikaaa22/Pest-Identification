@@ -196,17 +196,6 @@ elif selected_tab == "Pest Prediction":
 
     if st.button("Get Prediction"):
         try:
-            # Fetch prediction from ESP32
-            pred_url = f"{ESP32_IP}/prediction"
-            response = requests.get(pred_url)
-            if response.status_code == 200:
-                prediction = response.json().get("prediction", "").strip().lower()
-                timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
-                st.markdown(f"### Timestamp: {timestamp}")
-            else:
-                st.error("Failed to get prediction data")
-                prediction = ""
-
             # Fetch image from ESP32
             img_url = f"{ESP32_IP}/image"
             response = requests.get(img_url)
@@ -226,6 +215,8 @@ elif selected_tab == "Pest Prediction":
                         st.success(f"### Pest: {result_label}")
                         #st.markdown(f"#### Confidence Score: {confidence_score}")
                         st.image(image, use_container_width=True, caption="")
+                        timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
+                        st.markdown(f"### Timestamp: {timestamp}")
                         st.session_state.history.insert(0,(timestamp, result_label, image))
                         suggestions(result_label)
                     else:
