@@ -212,11 +212,11 @@ elif selected_tab == "Pest Prediction":
                     confidence_score = probabilities[max_prob_index] * 100 # Convert to percentage
                     #result_label = CLASS_LABEL[int(model_predict[0])]
                     if confidence_score >= 50:
+                        timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
+                        st.markdown(f"### Timestamp: {timestamp}")
                         st.success(f"### Pest: {result_label}")
                         #st.markdown(f"#### Confidence Score: {confidence_score}")
                         st.image(image, use_container_width=True, caption="")
-                        timestamp = datetime.now(pst).strftime("%m-%d-%Y %I:%M:%S %p")
-                        st.markdown(f"### Timestamp: {timestamp}")
                         st.session_state.history.insert(0,(timestamp, result_label, image))
                         suggestions(result_label)
                     else:
