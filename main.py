@@ -188,7 +188,7 @@ def suggestions(result_label):
     # st.write("It helps in monitoring and analyzing real-time data from the ESP32 device.")
 
 # Predictions Tab
-elif selected_tab == "Pest Prediction":
+if selected_tab == "Pest Prediction":
     st.title("Pest Prediction")
 
     if "history" not in st.session_state:
