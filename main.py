@@ -54,7 +54,7 @@ ConvNeXtXLarge_featurized_model = get_ConvNeXtXLarge_model()
 classification_model = load_sklearn_models("mlp_best_model.pkl")
 
 # Sidebar navigation
-selected_tab = st.sidebar.radio("", ["Pest Prediction", "History", "About"])
+selected_tab = st.sidebar.radio("", ["Pest Prediction", "History"])
 
 removal_suggestion = ""
 chem_control_text = "#### 🧪 **Chemical Control:**"
@@ -181,11 +181,11 @@ def suggestions(result_label):
         wheat_sawfly()
 
 # About Tab
-if selected_tab == "About":
-    st.title("About")
-    st.image(IMAGE_URL, use_container_width=True)
-    st.write("This app connects to an ESP32 device to fetch and display predictions along with captured images.")
-    st.write("It helps in monitoring and analyzing real-time data from the ESP32 device.")
+#if selected_tab == "About":
+    # st.title("About")
+    # st.image(IMAGE_URL, use_container_width=True)
+    # st.write("This app connects to an ESP32 device to fetch and display predictions along with captured images.")
+    # st.write("It helps in monitoring and analyzing real-time data from the ESP32 device.")
 
 # Predictions Tab
 elif selected_tab == "Pest Prediction":
